@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e2538;
+}
+header {
+  padding: 25px 0;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.logo_imgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo_imgs a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-image: url(/public/icons/logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 6px;
+}
+.kino,
+.area {
+  font-family: Qanelas;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 31.37px;
+  text-align: left;
+}
+.kino {
+  color: #3657cb;
+}
+
+.area {
+  color: #fff;
+}
+.social_apps {
+  display: block;
+  width: 130px;
+  height: 15px;
+  background-image: url(/public/icons/brands.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-family: Qanelas;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21.06px;
+  text-align: left;
+}
+
+.nav-links a:hover {
+  color: #b0b0b0;
+}
+
+.search-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #ffffff;
+}
+
+.search-box button {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-image: url(/public/icons/search.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.login-btn {
+  padding: 17px 50px;
+  background-color: #3657cb;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Qanelas;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26.64px;
+  text-align: center;
+  box-shadow: 0px 0px 15px 0px #4871ffcc;
+}
+
+.login-btn:hover {
+  background-color: #3a54e5;
+}
