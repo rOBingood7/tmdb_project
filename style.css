@@ -6,9 +6,12 @@
 
 body {
   background-color: #1e2538;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-header {
-  padding: 25px 0;
+.main_header {
+  padding: 25px 0 50px;
 }
 
 .head {
@@ -17,9 +20,6 @@ header {
   align-items: center;
 }
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -86,7 +86,7 @@ header {
 }
 
 .nav-links a:hover {
-  color: #b0b0b0;
+  color: #6e717c;
 }
 
 .search-login {
@@ -134,4 +134,132 @@ header {
 
 .login-btn:hover {
   background-color: #3a54e5;
+}
+.new_movies_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+}
+h1 {
+  font-family: Qanelas;
+  font-size: 65px;
+  font-weight: 900;
+  line-height: 82.81px;
+  text-align: left;
+  color: white;
+}
+.new_movies_span {
+  border: 2px solid #ffffff;
+  width: 50px;
+}
+.new_movies_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.new_movies_right a {
+  text-decoration: none;
+  font-family: Qanelas;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.3px;
+  text-align: left;
+  color: #6e717c;
+}
+.new_movies_right a:hover {
+  color: white;
+}
+.new_movies_cont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.movie_card {
+  position: relative;
+  width: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.poster {
+  position: relative;
+  height: 420px;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rating {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #89cb36;
+  font-family: Qanelas;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.3px;
+  text-align: left;
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: white;
+}
+
+.details {
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.title {
+  font-family: Qanelas;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.3px;
+  text-align: left;
+  color: white;
+}
+
+.genre {
+  font-family: Qanelas;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5; 
+  text-align: left;
+  color: #f2f60f;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto; 
+  max-height: 4.5em; 
+  overflow: hidden; 
+  padding: 5px;
+  min-height: 100px;
+}
+.show_more {
+  width: 200px;
+  background-color: transparent;
+  margin: 50px 0;
+  padding: 20px 40px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  color: white;
+  font-family: Qanelas;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 29.97px;
+  cursor: pointer;
+}
+
+.show_more:hover {
+  background-color: #6e717c;
+  color: white;
+}
+.new_movies_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
