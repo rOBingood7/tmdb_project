@@ -1,4 +1,4 @@
-export function Card(item) {
+export function Card(item, allGenres) {
   const body = document.body;
   const movie_card = document.createElement("div");
   const poster = document.createElement("div");
@@ -17,7 +17,15 @@ export function Card(item) {
   poster.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.poster_path})`;
   rating.innerHTML = item.vote_average.toFixed(1);
   title.innerHTML = item.title;
-  genre.innerHTML = item.overview.slice(0, 150) + " ...Больше";
+
+  const genreNames = item.genre_ids
+    .map((id) => {
+      const genreObj = allGenres.find((genre) => genre.id === id);
+      return genreObj ? genreObj.name : "";
+    })
+    .join(", ");
+
+  genre.innerHTML = genreNames;
 
   movie_card.append(poster, details);
   poster.append(rating);
@@ -25,7 +33,6 @@ export function Card(item) {
 
   movie_card.onmousemove = () => {
     body.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`;
-    poster.style.background = "#3657CBA6";
   };
 
   movie_card.onmouseout = () => {
