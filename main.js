@@ -37,16 +37,3 @@ reload(
   (item) => Card(item, genres.genres),
   popular_movies
 );
-updateProgressBar();
-
-function updateProgressBar() {
-  const windowScroll =
-    document.documentElement.scrollTop || document.body.scrollTop;
-  const documentHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  const scrollPercentage = (windowScroll / documentHeight) * 100;
-  document.getElementById("progressBar").style.width = scrollPercentage + "%";
-}
-
-window.addEventListener("scroll", updateProgressBar);
