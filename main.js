@@ -30,7 +30,7 @@ reload(
   cont
 );
 
-reload(top_rated.results.slice(0, 4), Slider, slider);
+reload(top_rated.results, Slider, slider);
 
 reload(
   popular.results.slice(0, 4),

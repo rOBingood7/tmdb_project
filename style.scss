@@ -1,0 +1,495 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #1e2538;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 80vh;
+	padding-bottom: 500px;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100vh;
+		background: linear-gradient(transparent, #1e25389a, #1e2538);
+		position: absolute;
+		z-index: -1;
+		bottom: 0px;
+	}
+}
+
+.main_header {
+	padding: 25px 0 50px;
+}
+
+.head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.logo {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.logo_imgs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo_imgs a {
+	display: block;
+	width: 25px;
+	height: 25px;
+	background-image: url(/public/icons/logo.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 6px;
+}
+
+.kino,
+.area {
+	font-family: Qanelas;
+	font-size: 25px;
+	font-weight: 800;
+	line-height: 31.37px;
+	text-align: left;
+}
+
+.kino {
+	color: #3657cb;
+}
+
+.area {
+	color: #fff;
+}
+
+.social_apps {
+	display: block;
+	width: 130px;
+	height: 15px;
+	background-image: url(/public/icons/brands.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.nav-links a {
+	color: #fff;
+	text-decoration: none;
+	font-family: Qanelas;
+	font-size: 17px;
+	font-weight: 700;
+	line-height: 21.06px;
+	text-align: left;
+}
+
+.nav-links a:hover {
+	color: #6e717c;
+}
+
+.search-login {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+
+.search-box {
+	display: flex;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 20px;
+	border: 1px solid #ffffff;
+}
+
+.search-box button {
+	display: block;
+	width: 15px;
+	height: 15px;
+	background-image: url(/public/icons/search.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.login-btn {
+	padding: 17px 50px;
+	background-color: #3657cb;
+	color: #fff;
+	border-radius: 25px;
+	text-decoration: none;
+	font-family: Qanelas;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 26.64px;
+	text-align: center;
+	box-shadow: 0px 0px 15px 0px #4871ffcc;
+}
+
+.login-btn:hover {
+	background-color: #3a54e5;
+}
+
+.new_movies_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 50px;
+}
+
+h1 {
+	font-family: Qanelas;
+	font-size: 65px;
+	font-weight: 900;
+	line-height: 82.81px;
+	text-align: left;
+	color: white;
+}
+
+.new_movies_span {
+	border: 2px solid #ffffff;
+	width: 50px;
+}
+
+.new_movies_right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.new_movies_right a {
+	text-decoration: none;
+	font-family: Qanelas;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 22.3px;
+	text-align: left;
+	color: #6e717c;
+}
+
+.new_movies_right p {
+	text-decoration: none;
+	font-family: Qanelas;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 22.3px;
+	text-align: left;
+	color: white;
+}
+
+.new_movies_right a:hover {
+	color: white;
+}
+
+.new_movies_cont,
+.popular_movies {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	margin-bottom: 50px;
+}
+
+.movie_card {
+	position: relative;
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.poster:hover {
+	.hover-button {
+		display: block;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-color: #3657CBA6;
+		opacity: 0.5;
+	}
+}
+
+.poster {
+	position: relative;
+	height: 420px;
+	width: 100%;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: 1s ease all;
+}
+
+.hover-button {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	z-index: 10;
+}
+
+.rating {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	background-color: #89cb36;
+	font-family: Qanelas;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 22.3px;
+	text-align: left;
+	padding: 5px 15px;
+	border-radius: 5px;
+	color: white;
+}
+
+.details {
+	color: #fff;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.title {
+	font-family: Qanelas;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 22.3px;
+	text-align: left;
+	color: white;
+}
+
+.genre {
+	font-family: Qanelas;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: left;
+	color: #f2f60f;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	max-height: 4.5em;
+	overflow: hidden;
+	padding: 5px;
+}
+
+.show_more {
+	width: 200px;
+	background-color: transparent;
+	margin-bottom: 50px;
+	padding: 20px 40px;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+	color: white;
+	font-family: Qanelas;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 29.97px;
+	cursor: pointer;
+}
+
+.show_more:hover {
+	background-color: #6e717c;
+	color: white;
+}
+
+.new_movies_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.traler_active {
+	position: relative;
+	background-image: url(/public/img/image\ 3.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 645px;
+}
+
+.play_btn {
+	background-image: url(/public/icons/play.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 60px;
+	height: 60px;
+	background-color: transparent;
+	border: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.trailer_footer {
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer_left,
+.footer_right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.footer_left h2 {
+	font-family: Qanelas;
+	font-size: 45px;
+	font-weight: 900;
+	line-height: 57.33px;
+	text-align: left;
+	color: white;
+}
+
+.like,
+.dislike {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.like button,
+.dislike button {
+	background: #1b2133;
+	border-radius: 10px;
+	border: none;
+	padding: 20px;
+}
+
+.like span,
+.dislike span {
+	font-family: Qanelas;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 17.85px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.dislike button {
+	transform: rotate(180deg);
+}
+
+.progress-container {
+	margin: 20px 0;
+	width: 100%;
+	height: 10px;
+	background-color: #1b2133;
+	position: relative;
+	border-radius: 10px;
+}
+
+.progress-bar {
+	height: 100%;
+	width: 0%;
+	background-color: #3657cb;
+	transition: width 0.25s;
+	border-radius: 10px;
+}
+
+.slider {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	overflow-x: scroll;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(0, 0, 0, 0.3);
+		border-radius: 4px;
+		border: 2px solid transparent;
+		background-clip: content-box;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+
+.movie_trailer {
+	background-image: url(/public/img/Фото.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 420px;
+	transition: filter 0.3s ease;
+	position: relative;
+}
+
+.movie_trailer .play_btn {
+	width: 40px;
+	height: 40px;
+}
+
+.slider_trailer {
+	min-width: 300px;
+}
+
+.slider_trailer h3 {
+	margin-top: 10px;
+	font-family: Qanelas;
+	font-size: 20px;
+	font-weight: 900;
+	line-height: 25.48px;
+	text-align: left;
+	color: white;
+}
+
+.top_movies_section {
+	margin-top: 75px;
+}
