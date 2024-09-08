@@ -37,7 +37,7 @@ export function Header() {
   search_button.type = "submit";
   login_btn.classList.add("login-btn");
   login_btn.href = "#";
-  login_btn.innerHTML = "Войти";
+  login_btn.innerHTML = "Sign in";
 
   logo_div.append(logo_imgs, social_apps);
   logo_imgs.append(logo_link, kino_span, area_span);

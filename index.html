@@ -12,31 +12,24 @@
 
     <section class="new_movies container">
       <header class="new_movies_header">
-        <h1>Сейчас в кино</h1>
+        <h1>Now playing</h1>
         <span class="new_movies_span"></span>
 
-        <div class="new_movies_right">
-          <a href="#">Все</a>
-          <a href="#">Боевики</a>
-          <a href="#">Приключения</a>
-          <a href="#">Комедии</a>
-          <a href="#">Фантастика</a>
-          <a href="#">Триллеры</a>
-          <a href="#">Драма</a>
-        </div>
+        <div class="new_movies_right"></div>
       </header>
 
       <div class="new_movies_container">
         <div class="new_movies_cont"></div>
-        <button id="showMoreBtn" class="show_more">Все новинки</button>
+        <button class="show_more">All movies</button>
+        <button class="back">Back</button>
       </div>
     </section>
 
     <section class="trailer_section container">
       <header class="new_movies_header">
-        <h1>Новые трейлеры</h1>
+        <h1>Trailers</h1>
         <div class="new_movies_right">
-          <p>Все трейлеры</p>
+          <p>All trailers</p>
           <span class="arrow"
             ><img src="/public/icons/rightarrow.svg" alt=""
           /></span>
@@ -44,18 +37,11 @@
       </header>
 
       <div class="trailer">
-        <iframe
-          src="https://www.youtube.com/embed/GGDKwHgZsh4"
-          title="Кольца Власти - Обзор 2 сезона. Стало ли лучше?"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <iframe>LOADING...</iframe>
 
         <div class="trailer_footer">
           <div class="footer_left">
-            <h2>Форсаж 9</h2>
+            <h2></h2>
             <div class="social_apps"></div>
           </div>
           <div class="footer_right">
@@ -66,8 +52,10 @@
               <span class="like_count"></span>
             </div>
             <div class="dislike">
-              <button><img src="/public/icons/like.svg" alt="" /></button>
-              <span class="dislike_count">420</span>
+              <button class="dislike_btn">
+                <img src="/public/icons/like.svg" alt="" />
+              </button>
+              <span class="dislike_count"></span>
             </div>
           </div>
         </div>
@@ -81,7 +69,7 @@
 
     <section class="top_movies_section container">
       <header class="new_movies_header">
-        <h1>Популярные фильмы</h1>
+        <h1>Popular</h1>
         <span class="new_movies_span"></span>
         <div class="new_movies_right">
           <a href="#">Всё время</a>
@@ -95,12 +83,6 @@
       </header>
 
       <div class="popular_movies"></div>
-
-      <div class="nav_panel">
-        <img src="/public/icons/leftarrow.svg" alt="" />
-        <span>4/15</span>
-        <img src="/public/icons/rightarrow.svg" alt="" />
-      </div>
     </section>
 
     <script type="module" src="/main.js"></script>
