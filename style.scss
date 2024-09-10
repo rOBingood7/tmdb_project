@@ -182,7 +182,8 @@ h1 {
   width: 50px;
 }
 
-.new_movies_right {
+.new_movies_right,
+.years {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
@@ -208,7 +209,9 @@ h1 {
 }
 
 .new_movies_right a,
-.new_movies_right p {
+.new_movies_right p,
+.years a,
+.years p {
   text-decoration: none;
   font-family: Qanelas, sans-serif;
   font-size: 18px;
@@ -220,17 +223,20 @@ h1 {
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.new_movies_right a:hover {
+.new_movies_right a:hover,
+.years a:hover {
   color: white;
   border-radius: 5px;
 }
 
-.new_movies_right a:focus {
+.new_movies_right a:focus,
+.years a:focus {
   outline: none;
   color: white;
 }
 
-.new_movies_right p {
+.new_movies_right p,
+.years p {
   color: white;
 }
 
@@ -390,7 +396,7 @@ h1 {
 }
 
 .trailer_footer {
-  margin-top: 15px;
+  margin: 15px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -513,4 +519,134 @@ iframe {
   height: 655px;
   border: 0;
   border-radius: 10px;
+}
+
+.popular_people header .years {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow-y: hidden;
+}
+.actor_card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  background: url(/public/img/image\ 26.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+}
+
+.rank {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-family: Qanelas;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #f2f60f;
+}
+
+.actor_info {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
+
+.actor_name {
+  font-family: Qanelas;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 33.45px;
+  text-align: left;
+  color: white;
+}
+
+.actor_english_name {
+  color: #ffffff59;
+  font-family: Qanelas;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.46px;
+  text-align: left;
+  margin: 5px 0;
+}
+
+.actor_age {
+  color: #f2f60f;
+  font-family: Qanelas;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+}
+
+.actor_card_cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 15px;
+}
+.people_rank_list {
+  display: flex;
+  flex-direction: column;
+  background-color: #1b2133;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.person_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #2a2d3d;
+}
+
+.person_item:last-child {
+  border-bottom: none;
+}
+
+.person_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.person_name {
+  font-family: Qanelas;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.person_english_name {
+  color: #ffffff59;
+  font-family: Qanelas;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.person_age {
+  font-size: 16px;
+  color: #f2f60f;
+}
+
+.person_rank {
+  font-family: Qanelas;
+  font-size: 15px;
+  font-weight: 500;
+  color: #f2f60f;
+}
+
+.others_actors {
+  background: #1b2133;
 }

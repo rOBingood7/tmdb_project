@@ -13,12 +13,16 @@ const slider = document.querySelector(".slider");
 const popular_movies = document.querySelector(".popular_movies");
 const iframe = document.querySelector("iframe");
 const genres_list = document.querySelector(".new_movies_right");
+const years = document.querySelectorAll("#years a");
 const id = location.search.split("=").at(-1);
 
 const new_movies = await getData("/movie/now_playing");
 const genres = await getData("/genre/movie/list");
 const popular = await getData("/movie/popular");
 const top_rated = await getData("/movie/top_rated");
+const popular_people = await getData("/person/popular");
+console.log(popular_people);
+
 const video_res = await getData(`/movie/${top_rated.results[0].id}/videos`);
 
 const trailer = video_res.results.find((item) => item.type === "Trailer");
@@ -35,7 +39,50 @@ genres.genres.forEach((genre) => {
   genre_link.href = `#${genre.id}`;
   genre_link.innerHTML = genre.name;
 
+  genre_link.onclick = async (e) => {
+    if (e.target.innerHTML === "All") {
+      reload(
+        new_movies.results.slice(0, 8),
+        (item) => Card(item, genres.genres),
+        cont
+      );
+
+      e.target.style.color = "white";
+    } else {
+      const res = await getData("/discover/movie?with_genres=" + genre.id);
+      console.log(res);
+      reload(
+        res.results.slice(0, 8),
+        (item) => Card(item, genres.genres),
+        cont
+      );
+    }
+  };
+
   genres_list.append(genre_link);
+});
+
+years.forEach((year) => {
+  year.onclick = async (e) => {
+    if (e.target.innerHTML === "All") {
+      reload(
+        popular.results.slice(0, 4),
+        (item) => Card(item, genres.genres),
+        popular_movies
+      );
+
+      e.target.style.color = "white";
+    } else {
+      const res = await getData(
+        "/discover/movie?primary_release_year=" + e.target.innerHTML
+      );
+      reload(
+        res.results.slice(0, 4),
+        (item) => Card(item, genres.genres),
+        popular_movies
+      );
+    }
+  };
 });
 
 show_more.onclick = () => {
@@ -58,44 +105,10 @@ reload(
   (item) => Card(item, genres.genres),
   cont
 );
-reload(top_rated.results.slice(1), Slider, slider);
+reload(top_rated.results.slice(0, 8), Slider, slider);
 
 reload(
   popular.results.slice(0, 4),
   (item) => Card(item, genres.genres),
   popular_movies
 );
-
-function filterMovies(genreId) {
-  const filtered_movies = new_movies.results.filter((movie) =>
-    movie.genre_ids.includes(Number(genreId))
-  );
-
-  reload(
-    filtered_movies.slice(0, 8),
-    (item) => Card(item, genres.genres),
-    cont
-  );
-}
-
-genres_list.onclick = (e) => {
-  if (e.target.innerHTML === "All") {
-    reload(
-      new_movies.results.slice(0, 8),
-      (item) => Card(item, genres.genres),
-      cont
-    );
-
-    e.target.style.color = "white";
-  } else {
-    const genreId = Number(e.target.getAttribute("href").slice(1), 10);
-
-    genres_list.querySelectorAll("a").forEach((link) => {
-      link.style.color = "#6e717c";
-    });
-
-    e.target.style.color = "white";
-
-    filterMovies(genreId);
-  }
-};
