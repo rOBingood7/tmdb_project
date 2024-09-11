@@ -14,7 +14,7 @@ export function Card(item, genres) {
   details.classList.add("details");
   title.classList.add("title");
   genre.classList.add("genre");
-  button.innerHTML = "Open";
+  button.innerHTML = "Movie card";
   button.classList.add("hover-button");
 
   poster.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.poster_path})`;
@@ -31,6 +31,11 @@ export function Card(item, genres) {
   movie_card.append(poster, details);
   poster.append(rating, button);
   details.append(title, genre);
+
+  movie_card.onclick = (e) => {
+    e.preventDefault();
+    location.assign(`/pages/movie/index.html?id=${item.id}`);
+  };
 
   movie_card.onmousemove = () => {
     body.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`;

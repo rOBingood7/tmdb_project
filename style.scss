@@ -130,7 +130,7 @@ body {
   border: 1px solid #ffffff;
 }
 
-.search-box button {
+.search-box_button {
   display: block;
   width: 15px;
   height: 15px;
@@ -291,7 +291,16 @@ h1 {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  z-index: 10;
+  padding: 20px;
+  color: #3657cb;
+  box-shadow: 0px 0px 10px 0px #375ee866;
+  border: none;
+  border-radius: 10px;
+  font-family: Qanelas;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 29.97px;
+  text-align: left;
 }
 
 .rating {
@@ -341,7 +350,6 @@ h1 {
 
 .show_more,
 .back {
-  width: 200px;
   background-color: transparent;
   margin-bottom: 50px;
   padding: 20px 40px;
@@ -528,17 +536,22 @@ iframe {
   gap: 10px;
   overflow-y: hidden;
 }
+.actor_card_cont {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+}
 .actor_card {
+  height: 580px;
+  background-image: url(/public/img/jason.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
-  background: url(/public/img/image\ 26.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: transparent;
   border: none;
 }
 
@@ -588,12 +601,6 @@ iframe {
   text-align: left;
 }
 
-.actor_card_cont {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  gap: 15px;
-}
 .people_rank_list {
   display: flex;
   flex-direction: column;
@@ -647,6 +654,10 @@ iframe {
   color: #f2f60f;
 }
 
-.others_actors {
+.other_actors {
+  margin-top: 25px;
+  padding: 25px;
   background: #1b2133;
+  border: 2px solid none;
+  border-radius: 10px;
 }

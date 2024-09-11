@@ -13,13 +13,13 @@ export function Header() {
   const login_btn = document.createElement("a");
 
   const nav_items = [
-    "Афиша",
-    "Медиа",
-    "Фильмы",
-    "Актёры",
-    "Новости",
-    "Подборки",
-    "Категории",
+    "Poster",
+    "Media",
+    "Movies",
+    "Actors",
+    "News",
+    "Collections",
+    "Categories",
   ];
 
   head_container.classList.add("head", "container");
@@ -35,6 +35,7 @@ export function Header() {
   search_login.classList.add("search-login");
   search_box.classList.add("search-box");
   search_button.type = "submit";
+  search_button.classList.add("search-box_button");
   login_btn.classList.add("login-btn");
   login_btn.href = "#";
   login_btn.innerHTML = "Sign in";
@@ -44,7 +45,7 @@ export function Header() {
 
   nav_items.forEach((item) => {
     const link = document.createElement("a");
-    link.href = "#";
+    link.href = "pages/movie/";
     link.innerHTML = item;
     nav_links.appendChild(link);
   });
