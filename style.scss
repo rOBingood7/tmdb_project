@@ -5,13 +5,12 @@
 }
 
 body {
+  width: 100%;
   background-color: #1e2538;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 100%;
   height: 80vh;
-  padding-bottom: 500px;
 
   &::before {
     content: "";
@@ -53,7 +52,8 @@ body {
   align-items: center;
 }
 
-.logo_imgs a {
+.logo_imgs a,
+.logo_img {
   display: block;
   width: 25px;
   height: 25px;
@@ -185,12 +185,14 @@ h1 {
 .new_movies_right,
 .years {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-auto-flow: column;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-height: 200px;
-  overflow-y: scroll;
+  overflow-x: auto;
+  max-width: 600px;
+  white-space: nowrap;
+
   &::-webkit-scrollbar {
-    width: 10px;
     height: 10px;
   }
 
@@ -200,14 +202,17 @@ h1 {
   }
 
   &::-webkit-scrollbar-thumb {
-    height: 20%;
     background-color: #3657cb;
     border-radius: 10px;
     border: 2px solid transparent;
     background-clip: content-box;
   }
 }
-
+.trailer_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .new_movies_right a,
 .new_movies_right p,
 .years a,
@@ -241,7 +246,8 @@ h1 {
 }
 
 .new_movies_cont,
-.popular_movies {
+.popular_movies,
+.upcoming_cont {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -274,7 +280,8 @@ h1 {
   }
 }
 
-.poster {
+.poster,
+.poster_info {
   position: relative;
   height: 420px;
   width: 100%;
@@ -301,6 +308,7 @@ h1 {
   font-weight: 700;
   line-height: 29.97px;
   text-align: left;
+  z-index: 20;
 }
 
 .rating {
@@ -340,12 +348,7 @@ h1 {
   line-height: 1.5;
   text-align: left;
   color: #f2f60f;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-height: 4.5em;
   overflow: hidden;
-  padding: 5px;
 }
 
 .show_more,
@@ -656,8 +659,179 @@ iframe {
 
 .other_actors {
   margin-top: 25px;
-  padding: 25px;
+  padding: 15px;
   background: #1b2133;
   border: 2px solid none;
   border-radius: 10px;
+}
+
+.upcoming {
+  margin-top: 50px;
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.subscribe_section {
+  width: 100%;
+  height: 460px;
+  background-image: url("/public/img/footer_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.subscribe_section {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1d3aa0e5;
+  }
+}
+.subscribe_head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 55px;
+}
+.subscribe_details,
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+  gap: 25px;
+}
+.subscribe_section h3 {
+  font-family: Qanelas;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 31.37px;
+  text-align: center;
+  color: white;
+}
+.subscribe_section h2 {
+  font-family: Qanelas;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 63.7px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.subscribe_section p {
+  width: 55%;
+  font-family: Qanelas;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30.84px;
+  text-align: center;
+  color: white;
+}
+
+.subscribe-form {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.subscribe-form input {
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 300px;
+}
+
+.subscribe-form button {
+  padding: 20px 30px;
+  font-family: Qanelas;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 29.97px;
+  border: none;
+  background-color: #f2f60f;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+::placeholder {
+  color: #151a2699;
+  font-family: Qanelas;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 28.31px;
+  text-align: left;
+}
+.subscribe-form button:hover {
+  background-color: #e6b800;
+}
+
+.subscribe_section label {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+.subscribe_section span {
+  font-family: Qanelas;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 23.83px;
+  text-align: center;
+  color: white;
+}
+
+.subscribe_section label a {
+  font-family: Qanelas;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 23.83px;
+  text-align: center;
+  color: #f2f60f;
+}
+
+.footer_social_links {
+  background-image: url(/public/icons/brands_footer.svg);
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  height: 20px;
+  background-repeat: no-repeat;
+  margin-top: 60px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Qanelas;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21.06px;
+  text-align: left;
+}
+
+.footer-container p {
+  font-family: Qanelas;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17.85px;
+  text-align: center;
+  color: #e3e6f0b8;
+  margin-top: 10px;
+}
+
+.privacy-policy {
+  font-family: Qanelas;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17.85px;
+  text-align: center;
+  color: #e3e6f0b8;
+  margin-bottom: 50px;
 }

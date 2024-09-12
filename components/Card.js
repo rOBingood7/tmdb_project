@@ -1,4 +1,4 @@
-export function Card(item, genres) {
+export function Card(item, genres, showReleaseDate = false) {
   const body = document.body;
   const movie_card = document.createElement("div");
   const poster = document.createElement("div");
@@ -7,6 +7,7 @@ export function Card(item, genres) {
   const button = document.createElement("button");
   const title = document.createElement("h2");
   const genre = document.createElement("p");
+  const genreOrDate = document.createElement("p");
 
   movie_card.classList.add("movie_card");
   poster.classList.add("poster");
@@ -16,23 +17,28 @@ export function Card(item, genres) {
   genre.classList.add("genre");
   button.innerHTML = "Movie card";
   button.classList.add("hover-button");
+  genreOrDate.classList.add("genre");
 
   poster.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.poster_path})`;
   rating.innerHTML = item.vote_average.toFixed(1);
   title.innerHTML = item.title;
 
-  genre.innerHTML = item.genre_ids
-    .map((id) => {
-      const genreObj = genres.find((genre) => genre.id === id);
-      return genreObj ? genreObj.name : "";
-    })
-    .join(", ");
+  if (showReleaseDate) {
+    genreOrDate.innerHTML = new Date(item.release_date).toLocaleDateString();
+  } else {
+    genreOrDate.innerHTML = item.genre_ids
+      .map((id) => {
+        const genreObj = genres.find((genre) => genre.id === id);
+        return genreObj ? genreObj.name : "";
+      })
+      .join(", ");
+  }
 
   movie_card.append(poster, details);
   poster.append(rating, button);
-  details.append(title, genre);
+  details.append(title, genreOrDate);
 
-  movie_card.onclick = (e) => {
+  button.onclick = (e) => {
     e.preventDefault();
     location.assign(`/pages/movie/index.html?id=${item.id}`);
   };

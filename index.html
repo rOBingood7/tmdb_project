@@ -28,7 +28,7 @@
     <section class="trailer_section container">
       <header class="new_movies_header">
         <h1>Trailers</h1>
-        <div class="new_movies_right">
+        <div class="new_movies_right trailer_header">
           <p>All trailers</p>
           <span class="arrow"
             ><img src="/public/icons/rightarrow.svg" alt=""
@@ -96,44 +96,68 @@
       </header>
 
       <div class="actor_card_cont"></div>
-      <div class="other_actors">
-        <div class="person_item">
-          <div class="person_info">
-            <h2 class="person_name">Тинто Брасс</h2>
-            <p class="person_english_name">Tinto Brass</p>
-            <p class="person_age">87 лет</p>
-          </div>
-          <div class="person_rank">3-е место</div>
-        </div>
-
-        <div class="person_item">
-          <div class="person_info">
-            <h2 class="person_name">Джеки Чан</h2>
-            <p class="person_english_name">Jackie Chan</p>
-            <p class="person_age">66 лет</p>
-          </div>
-          <div class="person_rank">4-е место</div>
-        </div>
-
-        <div class="person_item">
-          <div class="person_info">
-            <h2 class="person_name">Том Харди</h2>
-            <p class="person_english_name">Tom Hardy</p>
-            <p class="person_age">42 года</p>
-          </div>
-          <div class="person_rank">5-е место</div>
-        </div>
-
-        <div class="person_item">
-          <div class="person_info">
-            <h2 class="person_name">Акшай Кумар</h2>
-            <p class="person_english_name">Akshay Kumar</p>
-            <p class="person_age">52 года</p>
-          </div>
-          <div class="person_rank">6-е место</div>
-        </div>
-      </div>
+      <div class="other_actors"></div>
     </section>
+
+    <section class="container upcoming">
+      <header class="new_movies_header">
+        <h1>Upcoming movies</h1>
+        <div class="new_movies_right trailer_header">
+          <p></p>
+          <span class="arrow"
+            ><img src="/public/icons/rightarrow.svg" alt=""
+          /></span>
+          <span class="arrow rotate"
+            ><img src="/public/icons/rightarrow.svg" alt=""
+          /></span>
+        </div>
+      </header>
+
+      <div class="upcoming_cont"></div>
+    </section>
+    <div class="subscribe_section container">
+      <div class="subscribe_details">
+        <div class="subscribe_head">
+          <span class="logo_img"></span>
+          <h3>Kinoarea</h3>
+        </div>
+        <h2>Subscribe to the E-mail newsletter</h2>
+        <p>
+          If you want to stay updated with the latest news and movie releases,
+          fill out the form below and subscribe to the free E-mail newsletter!
+        </p>
+        <form class="subscribe-form">
+          <input
+            type="email"
+            placeholder="Enter your E-mail address"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+        <label>
+          <input checked type="checkbox" required />
+          <span
+            >I agree to the terms of the <a href="#">privacy policy</a></span
+          >
+        </label>
+      </div>
+    </div>
+
+    <footer class="container">
+      <div class="footer-container">
+        <a href="#" class="footer_social_links"></a>
+        <div class="footer-links">
+          <a href="#">Poster</a>
+          <a href="#">News</a>
+          <a href="#">People</a>
+          <a href="#">Ratings</a>
+          <a href="#">Reviews</a>
+          <a href="#">Movie Catalog</a>
+        </div>
+        <p>2024 © Kinoarea. All rights reserved</p>
+        <a href="#" class="privacy-policy">Privacy Policy</a>
+      </div>
+    </footer>
 
     <script type="module" src="/main.js"></script>
   </body>

@@ -45,7 +45,7 @@ export function Header() {
 
   nav_items.forEach((item) => {
     const link = document.createElement("a");
-    link.href = "pages/movie/";
+    link.href = "#";
     link.innerHTML = item;
     nav_links.appendChild(link);
   });
