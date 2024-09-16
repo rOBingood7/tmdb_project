@@ -9,7 +9,7 @@ export function Card(item, genres, showReleaseDate = false) {
   const genre = document.createElement("p");
   const genreOrDate = document.createElement("p");
 
-  movie_card.classList.add("movie_card");
+  movie_card.classList.add("movie_card", "swiper-slide");
   poster.classList.add("poster");
   rating.classList.add("rating");
   details.classList.add("details");
@@ -40,13 +40,11 @@ export function Card(item, genres, showReleaseDate = false) {
 
   button.onclick = (e) => {
     e.preventDefault();
-    location.assign(`/pages/movie/index.html?id=${item.id}`);
+    location.assign(`/pages/movie/?id=${item.id}`);
   };
-
   movie_card.onmousemove = () => {
     body.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`;
   };
-
   movie_card.onmouseout = () => {
     body.style.backgroundColor = "#1e2538";
     body.style.backgroundImage = "none";

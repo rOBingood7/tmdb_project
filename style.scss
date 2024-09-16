@@ -246,7 +246,6 @@ h1 {
 }
 
 .new_movies_cont,
-.popular_movies,
 .upcoming_cont {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -349,6 +348,7 @@ h1 {
   text-align: left;
   color: #f2f60f;
   overflow: hidden;
+  padding-bottom: 30px;
 }
 
 .show_more,
@@ -678,6 +678,7 @@ iframe {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  border-radius: 10px;
 }
 
 .subscribe_section {
@@ -690,6 +691,7 @@ iframe {
     width: 100%;
     height: 100%;
     background-color: #1d3aa0e5;
+    border-radius: 10px;
   }
 }
 .subscribe_head {
@@ -834,4 +836,38 @@ iframe {
   text-align: center;
   color: #e3e6f0b8;
   margin-bottom: 50px;
+}
+.swiper-controls {
+  position: relative !important;
+  display: inline-block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.swiper-pagination {
+  display: inline-block !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.swiper-button-prev {
+  left: 45% !important;
+}
+
+.swiper-button-next {
+  right: 45% !important;
+}
+
+.swiper-pagination-fraction {
+  color: white !important;
 }

@@ -1,5 +1,7 @@
 import { LikeDislike } from "./algorithms/LikeDislike";
+import { SwiperFunction } from "./algorithms/Swiper.js";
 import { Card } from "./components/Card";
+import { Footer } from "./components/Footer.js";
 import { Header } from "./components/Header";
 import { PeopleCard } from "./components/PeopleCard";
 import { PeopleCardOthers } from "./components/PeopleCardOthers.js";
@@ -8,17 +10,19 @@ import { getData } from "./lib/http.request";
 import { reload } from "./lib/utills.js";
 
 Header();
+Footer();
+SwiperFunction();
 
 const new_movie_cont = document.querySelector(".new_movies_cont");
 const trailer_title = document.querySelector(".footer_left h2");
 const slider_cont = document.querySelector(".slider");
-const popular_movies_cont = document.querySelector(".popular_movies");
 const trailer_iframe = document.querySelector("iframe");
 const genres_cont = document.querySelector(".new_movies_right");
 const year_links = document.querySelectorAll("#years a");
 const actor_card_cont = document.querySelector(".actor_card_cont");
 const other_actors_cont = document.querySelector(".other_actors");
 const upcoming_cont = document.querySelector(".upcoming_cont");
+const swiper_wrapper = document.querySelector(".swiper-wrapper");
 
 const new_movies = await getData("/movie/now_playing");
 const genres = await getData("/genre/movie/list");
@@ -36,7 +40,7 @@ trailer_iframe.src = "https://www.youtube.com/embed/" + trailer.key;
 const top_rated_movie = top_rated_movies.results[0];
 LikeDislike(top_rated_movie);
 
-genres_cont.innerHTML = '<a href="/">All</a>';
+genres_cont.innerHTML = '<a href="#">All</a>';
 trailer_title.innerHTML = top_rated_movie.title;
 
 const show_more_btn = document.querySelector(".show_more");
@@ -91,20 +95,16 @@ year_links.forEach((year_link) => {
     e.preventDefault();
     if (e.target.innerHTML === "All") {
       reload(
-        popular_movies.results.slice(0, 4),
+        popular_movies.results,
         (item) => Card(item, genres.genres),
-        popular_movies_cont
+        swiper_wrapper
       );
       e.target.style.color = "white";
     } else {
       const res = await getData(
         "/discover/movie?primary_release_year=" + e.target.innerHTML
       );
-      reload(
-        res.results.slice(0, 4),
-        (item) => Card(item, genres.genres),
-        popular_movies_cont
-      );
+      reload(res.results, (item) => Card(item, genres.genres), swiper_wrapper);
     }
   };
 });
@@ -115,9 +115,9 @@ reload(
   new_movie_cont
 );
 reload(
-  popular_movies.results.slice(0, 4),
+  popular_movies.results,
   (item) => Card(item, genres.genres),
-  popular_movies_cont
+  swiper_wrapper
 );
 reload(
   upcoming_movies.results.slice(0, 8),

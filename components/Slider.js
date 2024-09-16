@@ -19,8 +19,10 @@ export function Slider(item) {
 
   slider_trailer.onclick = async () => {
     const iframe = document.querySelector("iframe");
+
     const trailer_title = document.querySelector(".footer_left h2");
     trailer_title.innerHTML = item.title;
+
     const res = await getData(`/movie/${item.id}/videos`);
     const finded = res.results.find((item) => item.type === "Trailer");
     iframe.src = "https://www.youtube.com/embed/" + finded.key;
